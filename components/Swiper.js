@@ -6,6 +6,7 @@ const images = [
   require("../assets/Green.png"),
   require("../assets/BlueRed.png"),
   require("../assets/Yellow.png"),
+  require("../assets/White.png"),
 ];
 
 export default function SlidingImages() {
@@ -20,7 +21,7 @@ export default function SlidingImages() {
         paginationStyle={{ bottom: 5 }}
       >
         {images.map((image, index) => (
-          <View key={index} style={styles.slide}>
+          <View key={index} style={styles.slide} className="bg-slate-200">
             <View className="ml-6">
               <View className="mb-6">
                 <View className="flex-row items-baseline">
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
   slide: {
     alignItems: "center",
     flexDirection: "row",
-    backgroundColor: "silver",
+    // backgroundColor: "",
     height: 160,
     borderRadius: 20,
     overflow: "visible",

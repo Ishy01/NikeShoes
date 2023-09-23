@@ -1,7 +1,8 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, ScrollView } from "react-native";
 import React from "react";
 import SlidingImages from "../components/Swiper";
 import Sort from "../components/Sort";
+import ShoeInfo from "../components/ShoeInfo";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,9 @@ export default function HomePage() {
       <View>
         <Sort />
       </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <ShoeInfo />
+      </ScrollView>
     </>
   );
 }
