@@ -49,13 +49,10 @@ const styles = StyleSheet.create({
     height: 200,
     marginHorizontal: 10,
     marginTop: 15,
-    // paddingHorizontal: 10,
-    // overflow: "visible",
   },
   slide: {
     alignItems: "center",
     flexDirection: "row",
-    // backgroundColor: "",
     height: 160,
     borderRadius: 20,
     overflow: "visible",
