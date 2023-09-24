@@ -10,13 +10,13 @@ export const shoeInfo = [
         price: '$'+ 25.99,
     },
     {
-        title: 'Air Max 97',
+        title: 'Air Max 98',
         image: require('../assets/Blue.png'),
-        price: '$'+ 20.99,
+        price: '$'+ 27.99,
     },
     {
-        title: 'Air Max 97',
+        title: 'Air Max 99',
         image: require('../assets/White.png'),
-        price: '$'+ 20.99,
+        price: '$'+ 29.99,
     }
 ]
