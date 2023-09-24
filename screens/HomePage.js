@@ -7,7 +7,7 @@ import ShoeInfo from "../components/ShoeInfo";
 export default function HomePage() {
   return (
     <>
-      <View className="px-3 pt-2 flex-row items-center justify-between ">
+      <View className="px-3 pt-2 flex-row items-center justify-between bg-white">
         <View className="flex-row items-center">
           <View className="mr-5">
             <Image source={require("../assets/fi-rr-align-left.png")} />
@@ -16,13 +16,13 @@ export default function HomePage() {
         </View>
         <Image source={require("../assets/fi-rr-shopping-bag.png")} />
       </View>
-      <View>
+      <View className="bg-white">
         <SlidingImages />
       </View>
-      <View>
+      <View className="bg-white">
         <Sort />
       </View>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} className="bg-white">
         <ShoeInfo />
       </ScrollView>
     </>
