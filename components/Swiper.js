@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, Dimensions } from "react-native";
+import { View, Text, Image } from "react-native";
 import Swiper from "react-native-swiper";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const images = [
   require("../assets/Green.png"),
@@ -11,17 +12,25 @@ const images = [
 
 export default function SlidingImages() {
   return (
-    <View style={styles.wrapper}>
+    <View className="mx-3 mt-4" style={{height: hp(26)}}>
       <Swiper
         showsButtons={false}
         autoplay={true}
         loop={true}
-        dotStyle={styles.dot}
-        activeDotStyle={styles.activeDot}
-        paginationStyle={{ bottom: 5 }}
+        dotStyle={{
+          className: "bg-gray-500 bg-opacity-20 w-8 h-8 rounded-md mt-3 mx-2",
+        }}
+        activeDotStyle={{
+          className: "bg-gray-500 bg-opacity-60 w-8 h-8 rounded-md mt-3 mx-2",
+        }}
+        paginationStyle={{ bottom: 10 }}
       >
         {images.map((image, index) => (
-          <View key={index} style={styles.slide} className="bg-slate-200">
+          <View
+            key={index}
+            className="bg-slate-200 items-center flex-row rounded-2xl"
+            style={{height: hp(22)}}
+          >
             <View className="ml-6">
               <View className="mb-6">
                 <View className="flex-row items-baseline">
@@ -30,12 +39,12 @@ export default function SlidingImages() {
                 </View>
                 <Text className="text-lg">on your first purchase</Text>
               </View>
-              <View className="rounded-full bg-black p-2">
+              <View className="rounded-full bg-black p-2 mr-10">
                 <Text className="text-white text-center text-lg">Shop now</Text>
               </View>
             </View>
-            <View style={styles.imageContainer}>
-              <Image source={image} style={styles.image} />
+            <View className="absolute left-32">
+              <Image source={image} style={{height: hp(25), width: wp(60)}} />
             </View>
           </View>
         ))}
@@ -43,42 +52,3 @@ export default function SlidingImages() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  wrapper: {
-    height: 200,
-    marginHorizontal: 10,
-    marginTop: 15,
-  },
-  slide: {
-    alignItems: "center",
-    flexDirection: "row",
-    height: 160,
-    borderRadius: 20,
-    overflow: "visible",
-  },
-  imageContainer: {
-    position: "absolute",
-    right: -4,
-  },
-  image: {
-    width: 200,
-    height: 200,
-  },
-  dot: {
-    backgroundColor: "rgba(0,0,0,.2)",
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    marginTop: 3,
-    marginHorizontal: 2,
-  },
-  activeDot: {
-    backgroundColor: "rgba(0,0,0,.6)",
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    marginTop: 3,
-    marginHorizontal: 2,
-  },
-});
