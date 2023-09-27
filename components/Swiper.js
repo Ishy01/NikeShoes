@@ -44,7 +44,7 @@ export default function SlidingImages() {
               </View>
             </View>
             <View className="absolute left-32">
-              <Image source={image} style={{height: hp(22), width: wp(55)}} />
+              <Image source={image} style={{height: hp(22), width: wp(60)}} />
             </View>
           </View>
         ))}
